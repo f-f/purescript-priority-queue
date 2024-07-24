@@ -31,18 +31,18 @@ import Effect (Effect)
 -- API
 
 -- | A priority queue that allows for efficient insertion and removal of elements.
--- The queue can be created with a custom ordering function that determines the
--- priority of elements.
--- Note: it's not possible to have a meaninful Eq instance, as two queues with
--- the same elements might have them in different order due to the heap structure.
--- It's recommended to convert the queue to an array to compare it.
+-- | The queue can be created with a custom ordering function that determines the
+-- | priority of elements.
+-- | Note: it's not possible to have a meaninful Eq instance, as two queues with
+-- | the same elements might have them in different order due to the heap structure.
+-- | It's recommended to convert the queue to an array to compare it.
 newtype Queue a = Queue
   { contents :: STArray Global a
   , ordering :: a -> a -> Boolean
   }
 
 -- | Create a new priority queue where the element with the smallest value
--- according to the provided function will be at the front of the queue.
+-- | according to the provided function will be at the front of the queue.
 newMinQueue :: forall a. (a -> Number) -> Effect (Queue a)
 newMinQueue fn = toEffect do
   contents <- STA.new
@@ -52,7 +52,7 @@ newMinQueue fn = toEffect do
     }
 
 -- | Create a new priority queue where the element with the largest value
--- according to the provided function will be at the front of the queue.
+-- | according to the provided function will be at the front of the queue.
 newMaxQueue :: forall a. (a -> Number) -> Effect (Queue a)
 newMaxQueue fn = toEffect do
   contents <- STA.new
@@ -76,8 +76,8 @@ pop (Queue { contents, ordering }) = toEffect do
   removeMax contents ordering
 
 -- | Remove and return the first n elements from the queue.
--- Note: we guarantee that the elements are sorted in the order of the queue,
--- first element is the one with the highest priority.
+-- | Note: we guarantee that the elements are sorted in the order of the queue,
+-- | first element is the one with the highest priority.
 popN :: forall a. Int -> Queue a -> Effect (Array a)
 popN n (Queue { contents, ordering }) = toEffect do
   result <- STA.new
