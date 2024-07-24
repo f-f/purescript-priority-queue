@@ -1,0 +1,19 @@
+package:
+  name: priority-queue
+  dependencies:
+    - arrays
+    - effect
+    - foldable-traversable
+    - integers
+    - lists
+    - maybe
+    - prelude
+    - st
+  test:
+    main: Test.PriorityQueue
+    dependencies:
+      - assert
+      - console
+workspace:
+  packageSet:
+    registry: 53.1.0

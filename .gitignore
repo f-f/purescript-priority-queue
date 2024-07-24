@@ -1,0 +1,6 @@
+.psc-ide-port
+.direnv
+.envrc
+output
+.spago
+node_modules
