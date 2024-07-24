@@ -1,6 +1,6 @@
 # purescript-priority-queue
 
-[![Latest release](http://img.shields.io/github/release/f-f/purescript-priority-queue.svg)](https://github.com/f-f/purescript-priority-queue/releases)
+[![Latest release](http://img.shields.io/github/tag/f-f/purescript-priority-queue.svg)](https://github.com/f-f/purescript-priority-queue/tags)
 [![Build status](https://github.com/f-f/purescript-priority-queue/workflows/CI/badge.svg?branch=main)](https://github.com/f-f/purescript-priority-queue/actions?query=workflow%3ACI+branch%3Amain)
 [![Pursuit](https://pursuit.purescript.org/packages/purescript-priority-queue/badge)](https://pursuit.purescript.org/packages/purescript-priority-queue)
 
