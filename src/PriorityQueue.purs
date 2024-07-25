@@ -19,6 +19,7 @@ import Control.Monad.ST (ST)
 import Control.Monad.ST.Global (Global, toEffect)
 import Data.Array.ST (STArray)
 import Data.Array.ST as STA
+import Data.Function (on)
 import Data.Int as Int
 import Data.List (List)
 import Data.List as List
@@ -48,7 +49,7 @@ newMinQueue fn = toEffect do
   contents <- STA.new
   pure $ Queue
     { contents
-    , ordering: \a b -> greaterThan (fn a) (fn b)
+    , ordering: greaterThan `on` fn
     }
 
 -- | Create a new priority queue where the element with the largest value
@@ -58,7 +59,7 @@ newMaxQueue fn = toEffect do
   contents <- STA.new
   pure $ Queue
     { contents
-    , ordering: \a b -> lessThan (fn a) (fn b)
+    , ordering: lessThan `on` fn
     }
 
 -- | Add an element to the queue.
