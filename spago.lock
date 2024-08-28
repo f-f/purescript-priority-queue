@@ -2,54 +2,59 @@ workspace:
   packages:
     priority-queue:
       path: ./
-      dependencies:
-        - arrays: ">=7.0.0 <8.0.0"
-        - effect: ">=4.0.0 <5.0.0"
-        - foldable-traversable: ">=6.0.0 <7.0.0"
-        - integers: ">=6.0.0 <7.0.0"
-        - lists: ">=7.0.0 <8.0.0"
-        - maybe: ">=6.0.0 <7.0.0"
-        - prelude: ">=6.0.0 <7.0.0"
-        - st: ">=6.0.0 <7.0.0"
-      test_dependencies:
-        - assert
-        - console
-      build_plan:
-        - arrays
-        - assert
-        - bifunctors
-        - console
-        - const
-        - contravariant
-        - control
-        - distributive
-        - effect
-        - either
-        - exists
-        - foldable-traversable
-        - functions
-        - functors
-        - identity
-        - integers
-        - invariant
-        - lazy
-        - lists
-        - maybe
-        - newtype
-        - nonempty
-        - numbers
-        - orders
-        - partial
-        - prelude
-        - profunctor
-        - refs
-        - safe-coerce
-        - st
-        - tailrec
-        - tuples
-        - type-equality
-        - unfoldable
-        - unsafe-coerce
+      core:
+        dependencies:
+          - arrays: ">=7.0.0 <8.0.0"
+          - effect: ">=4.0.0 <5.0.0"
+          - foldable-traversable: ">=6.0.0 <7.0.0"
+          - integers: ">=6.0.0 <7.0.0"
+          - lists: ">=7.0.0 <8.0.0"
+          - maybe: ">=6.0.0 <7.0.0"
+          - prelude: ">=6.0.0 <7.0.0"
+          - st: ">=6.0.0 <7.0.0"
+        build_plan:
+          - arrays
+          - bifunctors
+          - const
+          - contravariant
+          - control
+          - distributive
+          - effect
+          - either
+          - exists
+          - foldable-traversable
+          - functions
+          - functors
+          - identity
+          - integers
+          - invariant
+          - lazy
+          - lists
+          - maybe
+          - newtype
+          - nonempty
+          - numbers
+          - orders
+          - partial
+          - prelude
+          - profunctor
+          - refs
+          - safe-coerce
+          - st
+          - tailrec
+          - tuples
+          - type-equality
+          - unfoldable
+          - unsafe-coerce
+      test:
+        dependencies:
+          - assert
+          - console
+        build_plan:
+          - assert
+          - console
+          - effect
+          - prelude
   extra_packages: {}
 packages:
   arrays:
