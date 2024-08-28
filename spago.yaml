@@ -15,9 +15,13 @@ package:
       - assert
       - console
   publish:
-    version: 0.1.0
+    version: 0.1.1
     license: Apache-2.0
     location:
       githubOwner: f-f
       githubRepo: purescript-priority-queue
+    owners:
+      - keytype: ssh-ed25519
+        public: AAAAC3NzaC1lZDI1NTE5AAAAIBP7cbacua16Pi8FpgJUGpzlB14Y8AWcVAHlgdQTMQof
+        id: fabrizio+github@hadrianus
 workspace: {}
